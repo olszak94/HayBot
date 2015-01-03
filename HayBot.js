@@ -52,10 +52,3 @@ client.addListener('chat', function (channel, user, message) {
     	cliant.say(channel, "This is a test message issued by "+user)
     }
 });
-
-//times out a user for 3 minuets if they say the spam !raffle
-cliant.addListener('chat' function (channel, user, message)) {
-	if (message === "!raffle") {
-		cliant.say(channel "/timeout "+user+" 180");
-	}
-});
