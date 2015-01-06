@@ -20,13 +20,13 @@ var clientOptions = {
 	//For logging into chat
 	identity: {
 		username: 'HayBot',
-		password: 'oauth:nfsu2np4023gfkqzudha9iztke5is65'
+		password: 'xxxxxxxx'
 	},
 	//For Twitch API
 	 oauth: {
      	port: 6511,
-     	clientID: '4laf415ngl6bf64e6zacbmt65asvdi8',
-     	clientSecret: '53zx8t0j38wkdqoq8060invojunqsag',
+     	clientID: 'xxxxxxxx',
+     	clientSecret: 'xxxxxxxxxxxxxxxxxxxxxxx',
      	scopes: 'user_read,channel_read,channel_editor'
     },
 	channels: ['Hay1tsme"']
