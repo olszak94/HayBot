@@ -49,6 +49,7 @@ client.addListener('disconnected', function (reason) {
 //Simple !test command that prints "This is a test message issued by" and the user who issued it to chat
 client.addListener('chat', function (channel, user, message) {
     if (message === "!test") {
-    	cliant.say(channel, "This is a test message issued by "+user)
+    	cliant.say(channel, "This is a test message issued by "+user);
+    	console.log(user+"Just issued a test command in "+channel);
     }
 });
