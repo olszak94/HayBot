@@ -33,7 +33,12 @@ var clientOptions = {
 };
 
 var client = new irc.client(clientOptions);
+	if (!err){
 
+	}
+	else {
+		console.log(err);
+	}
 client.connect();
 
 //Displays a message to consol when connected to a channel
