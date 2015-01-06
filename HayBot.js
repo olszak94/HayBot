@@ -58,3 +58,11 @@ client.addListener('chat', function (channel, user, message) {
     	console.log(user+"Just issued a test command in "+channel);
     }
 });
+	
+
+	if (!err){
+
+	}
+	else {
+		console.log(err);
+	}
