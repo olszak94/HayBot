@@ -1,4 +1,5 @@
 var irc = require('twitch-irc');
+<<<<<<< HEAD
  
 // Calling a new client.. 
 var client = new irc.client({
@@ -16,6 +17,42 @@ var client = new irc.client({
 });
  
 // Connect the client to server.. 
+=======
+var _   = require('underscore');
+
+//Defining the options
+var clientOptions = {
+	options: {
+		//twitch-api options
+		debug: false,
+		debugIgnore: ['ping', 'chat', 'action'],
+		logging: false,
+		tc: 3,
+		checkUpdates: true
+	},
+	//For logging into chat
+	identity: {
+		username: 'HayBot',
+		password: 'xxxxxxxx'
+	},
+	//For Twitch API
+	 oauth: {
+     	port: 6511,
+     	clientID: 'xxxxxxxx',
+     	clientSecret: 'xxxxxxxxxxxxxxxxxxxxxxx',
+     	scopes: 'user_read,channel_read,channel_editor'
+    },
+	channels: ['Hay1tsme"']
+};
+
+var client = new irc.client(clientOptions);
+	if (!err){
+
+	}
+	else {
+		console.log(err);
+	}
+>>>>>>> origin/master
 client.connect();
  
 //if the bot DC's, give a reason for it
@@ -44,6 +81,7 @@ client.addListener('chat', function (channel, user, message) {
 
 //Displays League of LEgends rank
 client.addListener('chat', function (channel, user, message) {
+<<<<<<< HEAD
     // If the message starts with !hello.. 
     if (message.indexOf('!rank') === 0) {
         // Say something 
@@ -60,3 +98,18 @@ client.addListener('chat', function (channel, user, message) {
         client.say(channel, "Sir Hay1tsme Pro's lolking http://www.lolking.net/summoner/na/39879744");
     }
 });
+=======
+    if (message === "!test") {
+    	cliant.say(channel, "This is a test message issued by "+user);
+    	console.log(user+"Just issued a test command in "+channel);
+    }
+});
+	
+
+	if (!err){
+
+	}
+	else {
+		console.log(err);
+	}
+>>>>>>> origin/master
