@@ -81,7 +81,6 @@ client.addListener('chat', function (channel, user, message) {
 
 //Displays League of LEgends rank
 client.addListener('chat', function (channel, user, message) {
-<<<<<<< HEAD
     // If the message starts with !hello.. 
     if (message.indexOf('!rank') === 0) {
         // Say something 
@@ -98,18 +97,3 @@ client.addListener('chat', function (channel, user, message) {
         client.say(channel, "Sir Hay1tsme Pro's lolking http://www.lolking.net/summoner/na/39879744");
     }
 });
-=======
-    if (message === "!test") {
-    	cliant.say(channel, "This is a test message issued by "+user);
-    	console.log(user+"Just issued a test command in "+channel);
-    }
-});
-	
-
-	if (!err){
-
-	}
-	else {
-		console.log(err);
-	}
->>>>>>> origin/master
