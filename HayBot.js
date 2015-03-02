@@ -1,5 +1,4 @@
 var irc = require('twitch-irc');
-<<<<<<< HEAD
  
 // Calling a new client.. 
 var client = new irc.client({
@@ -11,49 +10,18 @@ var client = new irc.client({
     },
     identity: {
         username: 'HayBot',
-        password: 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
+        password: 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
     },
     channels: ['hay1tsme']
 });
  
 // Connect the client to server.. 
-=======
-var _   = require('underscore');
-
-//Defining the options
-var clientOptions = {
-	options: {
-		//twitch-api options
-		debug: false,
-		debugIgnore: ['ping', 'chat', 'action'],
-		logging: false,
-		tc: 3,
-		checkUpdates: true
-	},
-	//For logging into chat
-	identity: {
-		username: 'HayBot',
-		password: 'xxxxxxxx'
-	},
-	//For Twitch API
-	 oauth: {
-     	port: 6511,
-     	clientID: 'xxxxxxxx',
-     	clientSecret: 'xxxxxxxxxxxxxxxxxxxxxxx',
-     	scopes: 'user_read,channel_read,channel_editor'
-    },
-	channels: ['Hay1tsme"']
-};
-
-var client = new irc.client(clientOptions);
-	if (!err){
-
-	}
-	else {
-		console.log(err);
-	}
->>>>>>> origin/master
 client.connect();
+
+//sends a message to chat when connected
+client.addListener('join', function (channel, username) {
+    client.say(channel, "HELLOOOOOOOOOOOO chat! OneHand")
+});
  
 //if the bot DC's, give a reason for it
 client.addListener('disconnected', function (reason) {
