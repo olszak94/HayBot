@@ -1,54 +1,62 @@
-/*
-HayBot's main control file, with template from twitch-irc's github
-Coded by Hay
-*/
-
-//stating required libraries
 var irc = require('twitch-irc');
-var _   = require('underscore');
-
-//Defining the options
-var clientOptions = {
-	options: {
-		//twitch-api options
-		debug: false,
-		debugIgnore: ['ping', 'chat', 'action'],
-		logging: false,
-		tc: 3,
-		checkUpdates: true
-	},
-	//For logging into chat
-	identity: {
-		username: 'HayBot',
-		password: 'oauth:nfsu2np4023gfkqzudha9iztke5is65'
-	},
-	//For Twitch API
-	 oauth: {
-     	port: 6511,
-     	clientID: '4laf415ngl6bf64e6zacbmt65asvdi8',
-     	clientSecret: '53zx8t0j38wkdqoq8060invojunqsag',
-     	scopes: 'user_read,channel_read,channel_editor'
+ 
+// Calling a new client.. 
+var client = new irc.client({
+    options: {
+        debug: true,
+        debugIgnore: ['ping', 'chat', 'action'],
+        logging: false,
+        tc: 3
     },
-	channels: ['Hay1tsme"']
-};
-
-var client = new irc.client(clientOptions);
-
+    identity: {
+        username: 'HayBot',
+        password: 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
+    },
+    channels: ['hay1tsme']
+});
+ 
+// Connect the client to server.. 
 client.connect();
-
-//Displays a message to consol when connected to a channel
-client.addListener('join', function (channel, username) {
-    console.log("Now connected to" +channel);
-});
-
-//Displayed a message to consol when Disconected from a channel, and gives a reason
+ 
+//if the bot DC's, give a reason for it
 client.addListener('disconnected', function (reason) {
-    console.log("Disconnected because" +reason);
+    console.log("Disconnected because" + " " + reason);
+});
+//basic !hello command
+client.addListener('chat', function (channel, user, message) {
+    // If the message starts with !hello.. 
+    if (message.indexOf('!hello') === 0) {
+        // Say something 
+        // https://github.com/Schmoopiie/twitch-irc/wiki/Command:-Say 
+        client.say(channel, "Sup dude? Hows it going?");
+    }
 });
 
-//Simple !test command that prints "This is a test message issued by" and the user who issued it to chat
+//Love you foxy <3
 client.addListener('chat', function (channel, user, message) {
-    if (message === "!test") {
-    	cliant.say(channel, "This is a test message issued by "+user)
+    // If the message starts with !hello.. 
+    if (message.indexOf('!cute') === 0) {
+        // Say something 
+        // https://github.com/Schmoopiie/twitch-irc/wiki/Command:-Say 
+        client.say(channel, "NO I'M NOT! SwiftRage");
+    }
+});
+
+//Displays League of LEgends rank
+client.addListener('chat', function (channel, user, message) {
+    // If the message starts with !hello.. 
+    if (message.indexOf('!rank') === 0) {
+        // Say something 
+        // https://github.com/Schmoopiie/twitch-irc/wiki/Command:-Say 
+        client.say(channel, "Silver 5 S3, Bronze 2 S4, unranked S5. Now over to Mikuia for Osu! ranking.");
+    }
+});
+
+client.addListener('chat', function (channel, user, message) {
+    // If the message starts with !hello.. 
+    if (message.indexOf('!lolking') === 0) {
+        // Say something 
+        // https://github.com/Schmoopiie/twitch-irc/wiki/Command:-Say 
+        client.say(channel, "Sir Hay1tsme Pro's lolking http://www.lolking.net/summoner/na/39879744");
     }
 });
