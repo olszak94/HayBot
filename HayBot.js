@@ -1,4 +1,4 @@
-var irc = require('twitch-irc');
+var irc = require('tmi.js');
 
 // Calling a new client.. 
 var client = new irc.client({
@@ -25,7 +25,7 @@ client.addListener('join', function (channel, username) {
  
 //if the bot DC's, give a reason for it
 client.addListener('disconnected', function (reason) {
-    console.log("Disconnected because" + " " + reason);
+    console.log("Disconnected because " + reason);
 });
 
 client.addListener('chat', function (channel, user, message) {
@@ -58,19 +58,19 @@ client.addListener('chat', function (channel, user, message) {
     else if (command.indexOf('!rank lol') === 0) {
         // Say something 
         // https://github.com/Schmoopiie/twitch-irc/wiki/Command:-Say 
-        client.say(channel, "Silver 5 S3, Bronze 2 S4, unranked so far in S5");
+        client.say(channel, "Silver 5 S3, Bronze 2 S4, Unranked S5");
     }
 //Displays osu! rank (rquires Osu! API)
     // If the message starts with !rank osu... 
     else if (command.indexOf('!rank osu') === 0) {
         //Displays Osu! global rank, PP, and accuracy
-        client.say(channel, "Osu! stats for Hay1tsme <null>");
+        client.say(channel, "Osu! stats for Hay1tsme: <null>");
     }
 //Displays CS:GO rank (requires Valve API???)
     // If the message starts with !rank csgo... 
     else if (command.indexOf('!rank csgo') === 0) {
         //Displays Osu! global rank, PP, and accuracy
-        client.say(channel, "CS:GO stats for Hay1tsme <null>");
+        client.say(channel, "CS:GO stats for Hay1tsme: <null>");
     }
     // If the message starts with !lolking.. 
     else if (command.indexOf('!lolking') === 0) {
@@ -78,9 +78,5 @@ client.addListener('chat', function (channel, user, message) {
         // https://github.com/Schmoopiie/twitch-irc/wiki/Command:-Say 
         client.say(channel, "Sir Hay1tsme Pro's lolking http://www.lolking.net/summoner/na/39879744");
     }
-    //if the message contains ONLY !whois
-    else if (command.indexOf('!whois') === 0) {
-        //Tell the user the options for the command
-        cliant.say(channel, "Displays chat info for a Twitch user currently in chat (not currently operational). Usage: '!whois [user]' where 'user' is any Twitch username currently watching the stream")
-    }
-}
+
+});
