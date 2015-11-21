@@ -40,7 +40,7 @@ client.addListener('chat', function (channel, user, message) {
     //if the message starts with !help...
     else if (command.indexOf('!help') === 0) {
         //link the user to the Haybot page on Hay1tsme.com
-        cliant.say(channel, "Help for HayBot can be found at https://hay1tsme.com/HayBot");
+        client.say(channel, "Help for HayBot can be found at https://hay1tsme.com/HayBot");
     }
 //Love you foxy <3
     // If the message starts with !cute.. 
